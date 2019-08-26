@@ -20,9 +20,10 @@ jobs:
           command: |
             set -x
             docker-compose build
+            
 
       - run:
           name: Test
-          command: |
-            set -x
+          command: |            
+            chmod +x ./usr/local/bin/client.sh 
             docker-compose run client
