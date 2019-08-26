@@ -18,8 +18,11 @@ jobs:
       - run:
           name: Build
           command: |
+            set -x
             docker-compose build
 
       - run:
           name: Test
-          command: docker-compose run client
+          command: |
+            set -x
+            docker-compose run client
