@@ -17,7 +17,8 @@ jobs:
 
       - run:
           name: Build
-          command: docker-compose build
+          command: |
+            docker-compose build
 
       - run:
           name: Test
