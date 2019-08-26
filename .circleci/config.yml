@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: circleci/build-image:ubuntu-14.04-XL-922-9410082
 
     steps:
       - checkout
