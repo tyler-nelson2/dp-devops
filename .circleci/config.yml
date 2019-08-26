@@ -25,5 +25,4 @@ jobs:
       - run:
           name: Test
           command: |            
-            chmod +x /usr/local/bin/client.sh 
             docker-compose run client
