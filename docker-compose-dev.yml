@@ -1,0 +1,20 @@
+version: '3'
+services:
+  client:
+    build: client
+    depends_on:
+      - datapower
+    environment:
+      - CONTINUOUS=true
+  datapower:
+    build: datapower
+    depends_on:
+      - backend
+    volumes:
+      - ./datapower/config:/drouter/config
+      - ./datapower/local:/drouter/local
+    ports:
+      - "2780:2780"
+      - "9090:9090"
+  backend:
+    image: hstenzel/nodejs-hostname-automatic
